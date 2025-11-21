@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
 *,
 *::after,
 *::before {
@@ -15,10 +17,92 @@ body {
     align-items: flex-end;
     justify-content: center;
     min-height: 100vh;
+    width: 100vw;
     background-color: var(--dark-color);
     overflow: hidden;
     perspective: 1000px;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: pulse infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Cursor */
+.cursor {
+    position: relative;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Animation */
+.typewriter-animation {
+    animation:
+        typewriter 5s steps(50) 1s 1 normal both,
+        hideCursor 0.1s linear 6s forwards,
+        /* cursor hides after typing ends */
+        blinkingCursor 500ms steps(50) 6s;
+    /* blinking only WHILE typing */
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkingCursor {
+    0% {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    100% {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes hideCursor {
+    0% {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    100% {
+        border-right-color: transparent;
+    }
+}
+
+/* Birthday message container */
+.birthday-msg {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
 
 .birthday-msg {
     position: absolute;
@@ -33,12 +117,14 @@ body {
     z-index: 99999;
     text-align: center;
 }
-.birthday-msg p{
+
+.birthday-msg p {
     font-size: 1.5rem;
     margin-top: 1rem;
     color: #00e1ff;
     font-weight: normal;
 }
+
 .birthday-msg.show {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
@@ -1217,4 +1303,5 @@ body {
 
 .not-loaded * {
     animation-play-state: paused !important;
+
 }

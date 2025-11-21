@@ -19,12 +19,32 @@
             msg.classList.remove('hidden');
             setTimeout(() => msg.classList.add('show'), 50);
         }, 5000);
-    </script>
+
+    </script>>
 </head>
 
 <body class="not-loaded">
+    <script>
+        
+        const numStars = 200;
 
-    <div class="night"></div>
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+
+            const size = Math.random() * 3 + 2; // 2px to 5px
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+
+            star.style.opacity = Math.random() * 0.8 + 0.2;
+            star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+
+            document.body.appendChild(star);
+        }
+    </script>
     <div class="flowers">
         <div class="flower flower--1">
             <div class="flower__leafs flower__leafs--1">
@@ -323,11 +343,12 @@
             </div>
         </div>
     </div>
-    <div id="birthday-msg" class="birthday-msg hidden">
-        🎉 Happy Birthday! 🎉 <br>
+    <div id="birthday-msg" class="birthday-msg hidden cursor typewriter-animation">
+        Happy Birthday!! <br>
         Anushka
         <p>I hope you smile every day 😊💗</p>
     </div>
+
 
 </body>
 
