@@ -1,4 +1,3 @@
-// src/pages/StarPage.jsx
 import React, { useEffect, useState } from "react";
 
 const StarPage = () => {
@@ -41,7 +40,7 @@ const StarPage = () => {
                 onClick={handlePress}
                 class="relative cursor-pointer py-4 px-8 text-center font-barlow inline-flex justify-center text-base uppercase text-white rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-white focus:outline-offset-4 overflow-hidden"
             >
-                <span class="relative z-20"> Press Me</span>
+                <span class="relative z-20"> Press It</span>
 
                 <span
                     class="absolute left-[-75%] top-0 h-full w-[50%] bg-white/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
